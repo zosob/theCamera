@@ -68,10 +68,8 @@ map.on('click', function (evt) {
       'content': feature.get('name')
     });
     $(element).popover('show');
-    document.getElementById("external_control").style.display = "block";
   } else {
       $(element).popover('destroy');
-      document.getElementById("external_control").style.display = "none";
   }
 });
 
