@@ -1,3 +1,19 @@
-#map {
-       position: relative;
+.map {
+  width: 80%;
+  height: 100%;
+  float: left;
      }
+.sidepanel{
+  width: 20%;
+  height: 100%;
+  float: left;
+  display: none;
+}
+
+.sidepanel-title{
+  width: 100%;
+  font-size: 3em;
+  color: #000000;
+  display: block;
+  text-align: center;
+}

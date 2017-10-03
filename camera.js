@@ -1,17 +1,18 @@
 // Icon features on map..
 var iconFeature = new ol.Feature({
   geometry: new ol.geom.Point(ol.proj.fromLonLat([-92.020621, 30.210636])),
-  name: 'Lafayette Camera'
+  name: 'Lafayette Camera',
+  population: 127626
 });
 
 //Icon styles on map...
 var iconStyle = new ol.style.Style({
-image: new ol.style.Icon(({
-  anchor: [0.5, 0.5],
-  anchorXUnits: 'fraction',
-  anchorYUnits: 'fraction',
-  src: 'Camera.png',
-  scale: 0.08
+  image: new ol.style.Icon(({
+    anchor: [0.5, 0.5],
+    anchorXUnits: 'fraction',
+    anchorYUnits: 'fraction',
+    src: 'Camera.png',
+    scale: 0.08
   }))
 });
 
@@ -23,18 +24,16 @@ var vectorSource = new ol.source.Vector({
 });
 
 //Vector source updated on Vector Layer...
-
 var vectorLayer = new ol.layer.Vector({
   source: vectorSource
 });
 
 var map = new ol.Map({
-  target: 'map',
   layers: [
     new ol.layer.Tile({
     source: new ol.source.OSM()
-  }),vectorLayer
-    ],
+  }),vectorLayer],
+  target: document.getElementById('map'),
   view: new ol.View({
     center: ol.proj.fromLonLat([-92.020621, 30.210636]),
     zoom: 5
@@ -48,7 +47,7 @@ var popup = new ol.Overlay({
   positioning: 'bottom-center',
   stopEvent: false,
   offset: [0, -50]
-  });
+});
 
 map.addOverlay(popup);
 
@@ -68,8 +67,11 @@ map.on('click', function (evt) {
       'content': feature.get('name')
     });
     $(element).popover('show');
+    document.getElementById("side_pane").style.display = "block";
+    alert('Hello');
   } else {
       $(element).popover('destroy');
+      document.getElementById("side_pane").style.display = "block";
   }
 });
 
