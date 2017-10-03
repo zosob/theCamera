@@ -68,7 +68,6 @@ map.on('click', function (evt) {
     });
     $(element).popover('show');
     document.getElementById("side_pane").style.display = "block";
-    alert('Hello');
   } else {
       $(element).popover('destroy');
       document.getElementById("side_pane").style.display = "block";
