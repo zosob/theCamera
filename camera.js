@@ -1,3 +1,31 @@
+//Pan the camera...
+
+function move(id){
+  switch (id) {
+    case "1":
+          var root = 'http://359bcamera1.cmix.louisiana.edu/axis-cgi/com/ptz.cgi?move=left';
+          break;
+    case "2":
+          var root = 'http://359bcamera1.cmix.louisiana.edu/axis-cgi/com/ptz.cgi?move=right';
+          break;
+    case "3":
+          var root = 'http://359bcamera1.cmix.louisiana.edu/axis-cgi/com/ptz.cgi?move=up';
+          break;
+    case "4":
+          var root = 'http://359bcamera1.cmix.louisiana.edu/axis-cgi/com/ptz.cgi?move=down';
+          break;
+    default:
+    break;
+  }
+  $.ajax({
+    url: root,
+    method: 'GET'
+  });
+
+};
+
+
+
 // Icon features on map..
 var iconFeature = new ol.Feature({
   geometry: new ol.geom.Point(ol.proj.fromLonLat([-92.020621, 30.210636])),
