@@ -98,7 +98,7 @@ map.on('click', function (evt) {
     document.getElementById("side_pane").style.display = "block";
   } else {
       $(element).popover('destroy');
-      document.getElementById("side_pane").style.display = "block";
+      document.getElementById("side_pane").style.display = "none";
   }
 });
 
